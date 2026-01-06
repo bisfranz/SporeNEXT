@@ -1,0 +1,96 @@
+{
+  "name": "spore-next-launcher",
+  "version": "1.4.0",
+  "description": "Spore NEXT Launcher - Mod Manager",
+  "author": "Franz",
+  "license": "MIT",
+  "main": "src/main/main.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.1",
+    "@supabase/supabase-js": "^2.89.0",
+    "electron-updater": "^6.6.2",
+    "fast-xml-parser": "^5.3.3",
+    "node-fetch": "^2.7.0",
+    "react": "^19.2.3",
+    "react-country-flag": "^3.1.0",
+    "react-dom": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-transition-group": "^4.4.5",
+    "remark-gfm": "^4.0.1",
+    "yauzl": "^3.2.0"
+  },
+  "scripts": {
+    "vite": "vite",
+    "electron": "cross-env NODE_ENV=development electron .",
+    "dev": "concurrently -k -r \"npm:electron\" \"npm:vite\"",
+    "make-icons": "node scripts/make-icons.mjs",
+    "build": "powershell -NoProfile -Command \"npm run make-icons; vite build; xcopy /E /I /Y public\\assets dist\\assets; xcopy /E /I /Y public\\locales dist\\locales\"",
+    "dist": "powershell -NoProfile -Command \"npm run build; npx electron-builder --win --x64\"",
+    "dist:portable": "powershell -NoProfile -Command \"npm run build; npx electron-builder --win portable --x64\"",
+    "start": "powershell -NoProfile -Command \"npm run build; electron .\""
+  },
+  "build": {
+    "appId": "com.spore.next.launcher",
+    "productName": "Spore NEXT Launcher",
+    "directories": {
+      "buildResources": "public",
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "src/main/**/*",
+      "resources/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources",
+        "to": "resources"
+      }
+    ],
+    "asar": true,
+    "win": {
+      "icon": "public/build/icon.ico",
+      "requestedExecutionLevel": "requireAdministrator",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "public/build/icon.ico",
+      "uninstallerIcon": "public/build/icon.ico",
+      "artifactName": "${productName}-Setup-${version}-${arch}.exe"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "bisfranz",
+        "repo": "SporeNEXT",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "concurrently": "^9.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.0",
+    "png-to-ico": "^2.0.0",
+    "sharp": "^0.34.3",
+    "vite": "^7.3.0"
+  }
+}

@@ -1,0 +1,60 @@
+.modlist-pages {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1900px) and (min-height: 1000px) {
+  .modlist-pages {
+    margin-top: 0.8em;
+  }
+}
+
+.modlist-page-btn {
+  background: #23273a;
+  color: #b7e0ff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  outline: none;
+}
+
+.modlist-page-btn:hover:not(.active) {
+  background: #2e3350;
+  color: #fff;
+}
+
+.modlist-page-btn.active {
+  background: #7e5ab8;
+  color: #fff;
+  font-weight: bold;
+  cursor: default;
+}
+
+.modlist-page-btn.modlist-page-arrow {
+  padding: 0;
+  width: 2.3em;
+  height: 2.3em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.modlist-page-btn.modlist-page-arrow svg {
+  font-size: 1em;
+}
+
+.modlist-page-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.modlist-page-btn:disabled:hover {
+  background: #23273a;
+  color: #b7e0ff;
+}

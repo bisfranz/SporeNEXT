@@ -1,0 +1,43 @@
+.sporepediauploadbutton-root {
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+
+  background: #23273a;
+  border: none;
+  border-radius: 4px;
+
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: background 0.18s, opacity 0.18s, transform 0.06s;
+}
+
+.sporepediauploadbutton-root:hover {
+  background: #2b3046;
+}
+
+.sporepediauploadbutton-root:active {
+  background: #21263a;
+  transform: translateY(1px);
+}
+
+.sporepediauploadbutton-root:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sporepediauploadbutton-icon {
+  font-size: 1rem;
+}
+
+.sporepediauploadbutton-label {
+  line-height: 1;
+}

@@ -1,0 +1,31 @@
+# node modules and build
+node_modules/
+release/
+dist/
+out/
+*.log
+
+# editor settings
+.vscode/
+
+# public generated content
+public/build/
+
+# project folders not to commit
+scripts/
+src/renderer/lib/
+# ignore renderer hooks
+src/renderer/hooks/
+
+# electron cache
+*.asar
+
+# system files
+.DS_Store
+Thumbs.db
+
+# mods folder
+Mods/
+
+# temp files
+*.tmp

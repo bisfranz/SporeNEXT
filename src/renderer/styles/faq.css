@@ -1,0 +1,197 @@
+.faq-root {
+  color: #ccc;
+  font-size: 1.08rem;
+  width: 100%;
+  max-width: 1100px;
+  box-sizing: border-box;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.faq-title {
+  margin-bottom: 1.2rem;
+  color: #7e5ab8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: left;
+  font-size: 1.45rem;
+  text-shadow: none;
+  padding-left: 0.5rem;
+}
+
+.faq-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.faq-column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.faq-accordion-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.faq-accordion-item {
+  border-radius: 7px;
+  background: transparent;
+  border: 1px solid #23273a;
+  overflow: hidden;
+  transition: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.faq-accordion-item.open {
+  background: rgba(35, 39, 58, 0.18);
+  border: 1.5px solid #7e5ab8;
+}
+
+.faq-accordion-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.08rem;
+  text-align: left;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  transition: none;
+  position: relative;
+  z-index: 2;
+  font-family: Segoe UI, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.faq-accordion-question:hover,
+.faq-accordion-item.open .faq-accordion-question {
+  color: #7e5ab8;
+  background: none;
+}
+
+.faq-accordion-arrow {
+  margin-left: 12px;
+  font-size: 1.1em;
+  color: #7e5ab8;
+  transition: none;
+}
+
+.faq-accordion-item.open .faq-accordion-arrow {
+  color: #b7a6d7;
+}
+
+.faq-accordion-answer {
+  padding: 0.2rem 1.3rem 1rem 1.3rem;
+  color: #ccc;
+  font-size: 13px;
+  border-left: 2px solid rgba(126, 90, 184, 0.95);
+  border-radius: 0 0 7px 7px;
+  background: rgba(17, 23, 34, 0.35);
+  transition: max-height 0.18s, opacity 0.12s;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  line-height: 1.65;
+  letter-spacing: 0.2px;
+}
+
+.faq-accordion-item.open .faq-accordion-answer {
+  opacity: 1;
+  pointer-events: auto;
+  max-height: 300px;
+  transition: max-height 0.22s, opacity 0.12s;
+}
+
+.faq-accordion-answer span {
+  display: block;
+  white-space: normal;
+}
+
+.faq-accordion-answer p {
+  margin: 0 0 0.75rem 0;
+}
+
+.faq-accordion-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-accordion-answer ul,
+.faq-accordion-answer ol {
+  margin: 0.35rem 0 0.9rem 1.1rem;
+  padding: 0;
+}
+
+.faq-accordion-answer li {
+  margin: 0.25rem 0;
+}
+
+.faq-accordion-answer b {
+  font-weight: bolder;
+}
+
+.faq-root a {
+  color: #7e5ab8;
+  text-decoration: none;
+  transition: color 0.18s;
+  word-break: break-all;
+  position: relative;
+  padding-right: 1.1em;
+}
+
+.faq-root a:hover {
+  color: #b7a6d7;
+}
+
+.faq-root a:hover,
+.faq-root a:hover b,
+.faq-root a:hover strong {
+  color: #b7a6d7;
+}
+
+.faq-root a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0.25em;
+  width: 0.9em;
+  height: 0.9em;
+  opacity: 0.85;
+  background-color: currentColor;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M336 0h144c17.7 0 32 14.3 32 32v144c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3L210.6 346.7c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L402.7 64H336c-17.7 0-32-14.3-32-32S318.3 0 336 0zM64 64h128c17.7 0 32 14.3 32 32s-14.3 32-32 32H96v320h320V320c0-17.7 14.3-32 32-32s32 14.3 32 32v128c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128c0-35.3 28.7-64 64-64z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M336 0h144c17.7 0 32 14.3 32 32v144c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3L210.6 346.7c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L402.7 64H336c-17.7 0-32-14.3-32-32S318.3 0 336 0zM64 64h128c17.7 0 32 14.3 32 32s-14.3 32-32 32H96v320h320V320c0-17.7 14.3-32 32-32s32 14.3 32 32v128c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128c0-35.3 28.7-64 64-64z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+}
+
+.faq-root a:hover::after {
+  opacity: 1;
+}
+
+.faq-root a .faq-link-icon {
+  display: none !important;
+}
+
+@media (max-width: 980px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,64 @@
+.launcherupdater-root {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 1.1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.launcherupdater-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 320px;
+}
+
+.launcherupdater-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffe8d6;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+}
+
+.launcherupdater-subtitle {
+  font-size: 0.78rem;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.launcherupdater-error {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  color: #ffd6d6;
+}
+
+.launcherupdater-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #28af61 0%, #46a17b 100%);
+  color: #f9fffb;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.18rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(46, 204, 113, 0.35);
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+  outline: none;
+  white-space: nowrap;
+}
+
+.launcherupdater-btn:hover,
+.launcherupdater-btn:focus {
+  background: linear-gradient(90deg, #2ecc71 0%, #6fcf97 100%);
+  box-shadow: 0 6px 28px rgba(39, 174, 96, 0.5);
+  transform: translateY(-1px);
+}
+
+.launcherupdater-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

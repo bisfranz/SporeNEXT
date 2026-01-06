@@ -1,0 +1,122 @@
+.settingspanel-root {
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: #fff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.settingspanel-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.settingspanel-card-icon {
+  font-size: 1.7rem;
+  color: #7e5ab8;
+  filter: drop-shadow(0 0 4px #222a);
+  line-height: 1;
+}
+
+.settingspanel-card-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #7e5ab8;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+  line-height: 1.1;
+}
+
+.settingspanel-card-body {
+  margin-left: 2.7rem;
+  margin-top: 0.2rem;
+}
+
+.settingspanel-select {
+  background: #23273a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px #2222;
+  outline: none;
+  width: 180px;
+  margin-top: 0.2rem;
+}
+
+.settingspanel-select:focus {
+  background: #2e2e57;
+}
+
+.settingspanel-disclaimer {
+  background: none;
+  color: #ccc;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  line-height: 1.6;
+  max-width: 550px;
+}
+
+.settingspanel-disclaimer a {
+  color: #7e5ab8;
+  text-decoration: none;
+  transition: color 0.18s;
+  word-break: break-all;
+  position: relative;
+  padding-right: 1.1em;
+}
+
+.settingspanel-disclaimer a:hover,
+.settingspanel-disclaimer a:hover b,
+.settingspanel-disclaimer a:hover strong {
+  color: #b7a6d7;
+}
+
+.settingspanel-disclaimer a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0.25em;
+  width: 0.9em;
+  height: 0.9em;
+  opacity: 0.85;
+  background-color: currentColor;
+  pointer-events: none;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M336 0h144c17.7 0 32 14.3 32 32v144c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3L210.6 346.7c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L402.7 64H336c-17.7 0-32-14.3-32-32S318.3 0 336 0zM64 64h128c17.7 0 32 14.3 32 32s-14.3 32-32 32H96v320h320V320c0-17.7 14.3-32 32-32s32 14.3 32 32v128c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128c0-35.3 28.7-64 64-64z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M336 0h144c17.7 0 32 14.3 32 32v144c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3L210.6 346.7c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L402.7 64H336c-17.7 0-32-14.3-32-32S318.3 0 336 0zM64 64h128c17.7 0 32 14.3 32 32s-14.3 32-32 32H96v320h320V320c0-17.7 14.3-32 32-32s32 14.3 32 32v128c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128c0-35.3 28.7-64 64-64z'/%3E%3C/svg%3E")
+    no-repeat center / contain;
+}
+
+.settingspanel-disclaimer a:hover::after {
+  opacity: 1;
+}
+
+.settingspanel-disclaimer a:hover {
+  color: #b7a6d7;
+}
+
+.settingspanel-disclaimer p {
+  margin: 0 0 1rem 0;
+}
+
+.settingspanel-language-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.settingspanel-language-subtitle {
+  font-size: 0.95rem;
+  color: #b7e0ff;
+  opacity: 0.75;
+  font-weight: 500;
+}

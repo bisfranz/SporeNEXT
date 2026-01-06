@@ -1,0 +1,78 @@
+.loading-screen-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c2c52f2 0%, #1d1d37f2 100%);
+}
+
+.loading-screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 24px;
+  width: min(520px, calc(100vw - 48px));
+}
+
+.loading-screen-emblem {
+  width: 120px;
+  height: 120px;
+  animation: spin 1.2s linear infinite;
+  user-select: none;
+  pointer-events: none;
+}
+
+.loading-screen-message {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.35;
+}
+
+.loading-screen-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.loading-screen-progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.loading-screen-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.95)
+  );
+  width: 0%;
+  transition: width 180ms ease;
+}
+
+.loading-screen-progress-text {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

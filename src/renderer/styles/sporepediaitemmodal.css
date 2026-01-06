@@ -1,0 +1,253 @@
+/* Styled to match the look/feel of modprofiles modal */
+.sporepediaitem-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.sporepediaitem-modal {
+  background: #111722;
+  color: #fff;
+  padding: 2.5rem 2.2rem 2rem 2.2rem;
+  height: 100%;
+  width: 100%;
+  margin-left: 200px;
+  max-width: none;
+  max-height: none;
+  box-shadow: 0 4px 32px #000a;
+  position: relative;
+  text-align: left;
+  border: none;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.sporepediaitem-content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Header aligned to ModProfiles */
+.sporepediaitem-header {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid #23273a;
+  padding-bottom: 0.7rem;
+}
+
+.sporepediaitem-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Match ModProfiles image sizing (48x48) */
+.sporepediaitem-header-img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: transparent;
+  margin-right: 0.5rem;
+}
+
+.sporepediaitem-header-img--placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  background: #23273a;
+  margin-right: 0.5rem;
+}
+
+/* Make header text block behave like ModProfiles (no extra gaps) */
+.sporepediaitem-header-texts {
+  display: block;
+}
+
+/* Actions placement similar to ModProfiles */
+.sporepediaitem-actions {
+  margin-top: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sporepediaitem-title {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+}
+
+.sporepediaitem-author {
+  color: #b7e0ff;
+  font-size: 17px;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sporepediaitem-authorIcon {
+  font-size: 15px;
+  opacity: 0.95;
+  flex: 0 0 auto;
+}
+
+.sporepediaitem-sections-wrapper {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: calc(100vh - 250px);
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #7e5ab8 #23273a;
+}
+
+.sporepediaitem-sections-wrapper::-webkit-scrollbar {
+  width: 10px;
+  background: #23273a;
+  border-radius: 8px;
+}
+
+.sporepediaitem-sections-wrapper::-webkit-scrollbar-thumb {
+  background: #7e5ab8;
+  border-radius: 8px;
+  border: 2px solid #23273a;
+}
+
+.sporepediaitem-sections-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #b7a6d7;
+}
+
+/* Match ModProfiles: no card-like sections, same spacing */
+.sporepediaitem-section {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  max-width: 1000px;
+}
+
+.sporepediaitem-section-title {
+  color: #7e5ab8;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+/* Match ModProfiles description styling */
+.sporepediaitem-description {
+  color: #eee;
+  font-size: 1.01rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* Match ModProfiles details styling */
+.sporepediaitem-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sporepediaitem-details li {
+  background: #23273a;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.98rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.sporepediaitem-details li b {
+  color: #7e5ab8;
+  min-width: 70px;
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.sporepediaitem-details-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sporepediaitem-details-iconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.sporepediaitem-details-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 140ms ease;
+}
+
+/* Hover animation only (no click/active animation) */
+.sporepediaitem-details-iconWrap:hover .sporepediaitem-details-icon {
+  transform: scale(1.06);
+}
+
+/* Delete creation button (icon-only) */
+.sporepediaitem-deleteBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 76, 76, 0.35);
+  background: rgba(255, 76, 76, 0.1);
+  color: #ffb3b3;
+
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2222;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.sporepediaitem-deleteBtn:hover,
+.sporepediaitem-deleteBtn:focus-visible {
+  background: rgba(255, 76, 76, 0.18);
+  border-color: rgba(255, 76, 76, 0.6);
+  color: #ffffff;
+  outline: none;
+}
+
+.sporepediaitem-deleteBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Match ModProfiles max width on big screens */
+@media (min-width: 1920px) {
+  .sporepediaitem-section {
+    max-width: 1500px;
+  }
+}

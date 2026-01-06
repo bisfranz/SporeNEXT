@@ -1,0 +1,44 @@
+.sporepediafiltersbar-root {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sporepediafiltersbar-btn {
+  background: #23273a;
+  border: none;
+  border-radius: 4px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, opacity 0.18s;
+  padding: 0;
+  user-select: none;
+}
+
+.sporepediafiltersbar-btn:hover {
+  background: #2b3046;
+}
+
+.sporepediafiltersbar-btn:active {
+  background: #21263a;
+}
+
+.sporepediafiltersbar-btn.selected {
+  background: rgb(126, 90, 184);
+}
+
+.sporepediafiltersbar-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #000a);
+}
+
+.sporepediafiltersbar-asterisk {
+  color: #fff;
+  font-size: 1.05rem;
+}

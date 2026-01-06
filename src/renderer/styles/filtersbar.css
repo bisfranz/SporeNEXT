@@ -1,0 +1,43 @@
+.filtersbar-root {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filtersbar-btn {
+  background: #23273a;
+  border: none;
+  border-radius: 4px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.18s, opacity 0.18s;
+  padding: 0;
+  user-select: none;
+}
+
+.filtersbar-btn:hover {
+  background: #2b3046;
+}
+
+.filtersbar-btn:active {
+  background: #21263a;
+}
+
+.filtersbar-btn.selected {
+  background: rgb(126, 90, 184);
+}
+
+.filtersbar-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px #000a);
+}
+
+.filtersbar-asterisk {
+  color: #fff;
+}

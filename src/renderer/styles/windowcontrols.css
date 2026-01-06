@@ -1,0 +1,41 @@
+.window-controls {
+  display: flex;
+  position: fixed;
+  right: 0.5rem;
+  top: 0.5rem;
+  z-index: 1000;
+}
+
+.window-controls button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.18s, box-shadow 0.18s, background 0.18s;
+  box-shadow: 0 2px 8px #2222;
+  padding: 10px;
+  -webkit-app-region: no-drag;
+}
+
+.window-controls button:focus,
+.window-controls button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.window-controls-button .fa-window-minimize {
+  vertical-align: middle;
+  position: relative;
+  top: -7px;
+  font-size: 1.2rem;
+}
+
+.window-controls-close:hover {
+  color: #ff4c4c;
+}
+
+.window-controls-button:hover {
+  color: rgb(126, 90, 184);
+}

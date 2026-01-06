@@ -1,0 +1,223 @@
+.sporepediaupload-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.sporepediaupload-modal {
+  background: #181c24;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 4px 32px #000a;
+  width: min(820px, calc(100vw - 48px));
+  max-height: min(720px, calc(100vh - 48px));
+  overflow: auto;
+  text-align: left;
+  margin-left: 140px;
+  position: relative;
+}
+
+.sporepediaupload-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2e2e57, transparent);
+  opacity: 0.9;
+}
+
+.sporepediaupload-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sporepediaupload-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  opacity: 0.95;
+  flex: 0 0 auto;
+}
+
+.sporepediaupload-title {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.sporepediaupload-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sporepediaupload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.sporepediaupload-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sporepediaupload-field--full {
+  grid-column: 1 / -1;
+}
+
+.sporepediaupload-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.sporepediaupload-input,
+.sporepediaupload-textarea {
+  background: #23273a;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.sporepediaupload-input--readonly {
+  opacity: 0.85;
+}
+
+.sporepediaupload-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.sporepediaupload-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.sporepediaupload-input:focus,
+.sporepediaupload-textarea:focus {
+  border-color: rgba(126, 90, 184, 0.65);
+  box-shadow: 0 0 0 2px rgba(126, 90, 184, 0.18);
+}
+
+.sporepediaupload-help {
+  font-size: 0.85rem;
+  color: rgba(207, 209, 230, 0.9);
+}
+
+.sporepediaupload-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sporepediaupload-imageRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sporepediaupload-fileInput {
+  display: none;
+}
+
+.sporepediaupload-fileName {
+  color: rgba(207, 209, 230, 0.92);
+  font-size: 0.92rem;
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sporepediaupload-error {
+  color: #ffb3b3;
+  background: rgba(255, 76, 76, 0.08);
+  border: 1px solid rgba(255, 76, 76, 0.22);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.sporepediaupload-success {
+  color: #bfffc4;
+  background: rgba(50, 220, 110, 0.08);
+  border: 1px solid rgba(50, 220, 110, 0.22);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.sporepediaupload-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* Buttons: match app modal buttons style */
+.sporepediaupload-btn {
+  background: #23273a !important;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  outline: none;
+  margin-top: 10px;
+}
+
+.sporepediaupload-btn:hover,
+.sporepediaupload-btn:focus {
+  background: #2e2e57 !important;
+}
+
+.sporepediaupload-btn-primary {
+  background: rgb(126, 90, 184) !important;
+  font-weight: 700;
+}
+
+.sporepediaupload-btn-primary:hover,
+.sporepediaupload-btn-primary:focus {
+  background: rgb(146, 110, 204) !important;
+}
+
+.sporepediaupload-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.sporepediaupload-categories {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .sporepediaupload-modal {
+    margin-left: 0;
+  }
+
+  .sporepediaupload-grid {
+    grid-template-columns: 1fr;
+  }
+}

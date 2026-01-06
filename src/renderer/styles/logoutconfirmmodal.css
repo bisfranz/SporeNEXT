@@ -1,0 +1,141 @@
+.logoutconfirm-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.logoutconfirm-modal {
+  background: #181c24;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 4px 32px #000a;
+  min-width: 340px;
+  max-width: 500px;
+  text-align: center;
+  margin-left: 140px;
+  position: relative;
+}
+
+.logoutconfirm-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2e2e57, transparent);
+  opacity: 0.9;
+}
+
+.logoutconfirm-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logoutconfirm-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  opacity: 0.95;
+  flex: 0 0 auto;
+}
+
+.logoutconfirm-title {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.logoutconfirm-desc {
+  font-size: 1rem;
+  margin-bottom: 28px;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.logoutconfirm-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* --- Buttons: match closewarningmodal exactly --- */
+.logoutconfirm-btn {
+  background: #23273a !important;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  outline: none;
+}
+
+.logoutconfirm-btn:hover,
+.logoutconfirm-btn:focus {
+  background: #2e2e57 !important;
+}
+
+.logoutconfirm-btn-danger {
+  background: #ff4c4c !important;
+  color: #fff;
+  font-weight: 600 !important;
+}
+
+.logoutconfirm-btn-danger:hover,
+.logoutconfirm-btn-danger:focus {
+  background: #ff2222 !important;
+  color: #fff;
+}
+
+/* Remove any extra effects that don't exist on closewarningmodal */
+.logoutconfirm-btn:active {
+  transform: none;
+}
+
+.logoutconfirm-btn:focus-visible {
+  outline: none;
+}
+
+.logoutconfirm-btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Prevent sidebar button styles from leaking into the modal */
+.logoutconfirm-actions .logoutconfirm-btn {
+  border-left: 0 !important;
+  text-align: center;
+  padding: 0.7rem 1.5rem; /* re-assert */
+}
+
+.logoutconfirm-actions .logoutconfirm-btn:hover {
+  border-left: 0 !important;
+}
+
+@media (max-width: 520px) {
+  .logoutconfirm-modal {
+    margin-left: 0;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .logoutconfirm-top {
+    justify-content: flex-start;
+  }
+}

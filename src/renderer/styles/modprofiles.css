@@ -1,0 +1,366 @@
+.modprofiles-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.modprofiles-modal {
+  background: #111722;
+  color: #fff;
+  padding: 2.5rem 2.2rem 2rem 2.2rem;
+  height: 100%;
+  width: 100%;
+  margin-left: 200px;
+  max-width: none;
+  max-height: none;
+  box-shadow: 0 4px 32px #000a;
+  position: relative;
+  text-align: left;
+  border: none;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.modprofiles-content {
+  margin-top: 40px;
+}
+
+.modprofiles-sections-wrapper {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: calc(100vh - 250px);
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #7e5ab8 #23273a;
+}
+
+.modprofiles-sections-wrapper::-webkit-scrollbar {
+  width: 10px;
+  background: #23273a;
+  border-radius: 8px;
+}
+
+.modprofiles-sections-wrapper::-webkit-scrollbar-thumb {
+  background: #7e5ab8;
+  border-radius: 8px;
+  border: 2px solid #23273a;
+}
+
+.modprofiles-sections-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #b7a6d7;
+}
+
+.modprofiles-breadcrumbs {
+  margin-bottom: 1rem;
+  font-size: 1.01rem;
+  color: #b7e0ff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modprofiles-breadcrumb-link {
+  cursor: pointer;
+  color: #7e5ab8;
+  font-weight: 600;
+}
+
+.modprofiles-breadcrumb-link:hover {
+  color: #b7a6d7;
+}
+
+.modprofiles-breadcrumb-separator {
+  color: #888;
+}
+
+.modprofiles-breadcrumb-current {
+  color: #fff;
+  font-weight: 600;
+}
+
+.modprofiles-header {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-bottom: 1px solid #23273a;
+  padding-bottom: 0.7rem;
+}
+
+.modprofiles-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modprofiles-header-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: transparent;
+  margin-right: 0.5rem;
+}
+
+.modprofiles-title {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.modprofiles-author {
+  color: #b7e0ff;
+  font-size: 1.02rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.modprofiles-section {
+  margin-top: 1.1rem;
+  max-width: 1000px;
+}
+
+.modprofiles-section-title {
+  color: #7e5ab8;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+.modprofiles-description {
+  color: #eee;
+  font-size: 1.01rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
+}
+
+.modprofiles-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modprofiles-details li {
+  background: #23273a;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.98rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.modprofiles-details li b {
+  color: #7e5ab8;
+  min-width: 70px;
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.modprofiles-github-link {
+  color: #fff;
+  margin-left: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.18s;
+  cursor: pointer;
+}
+
+.modprofiles-github-link:hover {
+  color: #7e5ab8;
+}
+
+.modprofiles-github-icon {
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.modprofiles-readme-markdown {
+  background: #181c24;
+  border-radius: 8px;
+  padding: 2.5rem;
+  margin-top: 1rem;
+  color: #e6e6e6;
+  font-size: 1.01rem;
+  line-height: 1.7;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.modprofiles-readme-markdown h1,
+.modprofiles-readme-markdown h2,
+.modprofiles-readme-markdown h3 {
+  color: #fff;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+.modprofiles-readme-markdown h1 {
+  font-size: 1.7em;
+}
+
+.modprofiles-readme-markdown h2 {
+  font-size: 1.35em;
+}
+
+.modprofiles-readme-markdown h3 {
+  font-size: 1.13em;
+}
+
+.modprofiles-readme-markdown p {
+  margin: 0.7em 0;
+}
+
+.modprofiles-readme-markdown ul,
+.modprofiles-readme-markdown ol {
+  margin: 0.7em 0 0.7em 1.5em;
+}
+
+.modprofiles-readme-markdown code {
+  background: #23273a;
+  color: #ffb86c;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-size: 0.97em;
+}
+
+.modprofiles-readme-markdown pre {
+  background: #23273a;
+  color: #ffb86c;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.modprofiles-readme-markdown blockquote {
+  border-left: 4px solid #7e5ab8;
+  background: #23273a;
+  color: #b7e0ff;
+  margin: 1em 0;
+  padding: 0.7em 1em;
+  border-radius: 6px;
+}
+
+.modprofiles-readme-markdown table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+
+.modprofiles-readme-markdown th,
+.modprofiles-readme-markdown td {
+  border: 1px solid #23273a;
+  padding: 0.5em 1em;
+}
+
+.modprofiles-readme-markdown th {
+  background: #181c24;
+  color: #fff;
+}
+
+.modprofiles-readme-markdown img {
+  display: block;
+  margin: 1.2em auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0003;
+}
+
+.modprofiles-details-icon {
+  color: #7e5ab8;
+  margin-right: 0.5rem;
+  font-size: 1.15em;
+  vertical-align: middle;
+}
+
+.modprofiles-actions-fixed {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modprofiles-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.mod-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 160px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(126, 90, 184, 0.95),
+    rgba(92, 49, 161, 0.95)
+  );
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
+}
+
+.mod-action-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.42);
+}
+
+.mod-action-btn:active {
+  transform: translateY(0px) scale(0.99);
+}
+
+.mod-action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+  box-shadow: none;
+}
+
+.mod-action-btn.danger {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 76, 76, 0.95),
+    rgba(220, 40, 40, 0.95)
+  );
+  border-color: rgba(255, 76, 76, 0.35);
+}
+
+.mod-action-btn.danger:hover {
+  filter: brightness(1.03);
+}
+
+.mod-action-btn:focus-visible {
+  outline: 2px solid rgba(183, 224, 255, 0.95);
+  outline-offset: 2px;
+}
+
+@media (min-width: 1920px) {
+  .modprofiles-section {
+    max-width: 1500px;
+  }
+}

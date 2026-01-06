@@ -1,0 +1,46 @@
+.launchbuttons-root {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.launchbuttons-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: linear-gradient(90deg, #f77c49 0%, #ffb86c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.85rem 2.3rem;
+  font-size: 1.18rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #2223;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+  outline: none;
+  position: relative;
+}
+
+.launchbuttons-btn:hover,
+.launchbuttons-btn:focus {
+  background: linear-gradient(90deg, #ff9650 0%, #ffd18c 100%);
+  box-shadow: 0 4px 24px #f77c4966, 0 2px 12px #2225;
+}
+
+.launchbuttons-btn:active {
+  box-shadow: 0 1px 6px #2222;
+}
+
+.launchbuttons-img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.launchbuttons-error {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ffd6d6;
+  opacity: 0.9;
+}

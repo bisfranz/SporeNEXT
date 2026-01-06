@@ -1,0 +1,91 @@
+.main-corner-links {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.mcl-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(29, 29, 55, 0.42);
+  color: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 140ms ease, background 140ms ease,
+    border-color 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.mcl-btn:hover {
+  background: rgba(29, 29, 55, 0.62);
+  border-color: rgba(185, 160, 255, 0.32);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.44),
+    0 0 0 1px rgba(185, 160, 255, 0.1), 0 0 22px rgba(120, 80, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  filter: brightness(1.04);
+}
+
+.mcl-btn:active {
+  transform: translateY(0px) scale(0.98);
+  background: rgba(29, 29, 55, 0.7);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38), 0 0 18px rgba(120, 80, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.mcl-btn:focus-visible {
+  outline: none;
+  border-color: rgba(185, 160, 255, 0.55);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.38),
+    0 0 0 3px rgba(185, 160, 255, 0.18), 0 0 22px rgba(120, 80, 255, 0.16);
+}
+
+.mcl-btn svg {
+  font-size: 30px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+.mcl-btn .mcl-icon-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+.mcl-tooltip {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(29, 29, 55, 0.88);
+  border: 1px solid rgba(185, 160, 255, 0.2);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.45);
+}
+
+.mcl-tooltip::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(29, 29, 55, 0.88);
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.1));
+}

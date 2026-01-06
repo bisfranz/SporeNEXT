@@ -1,0 +1,22 @@
+.modsearchbar-root {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modsearchbar-input {
+    width: 320px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    border: none;
+    background: #23273a;
+    color: #b7c2d6;
+    font-size: 1.08rem;
+    outline: none;
+    box-shadow: 0 2px 8px #2222;
+    transition: background 0.18s;
+}
+
+.modsearchbar-input::placeholder {
+    color: #7a869a;
+    opacity: 1;
+}

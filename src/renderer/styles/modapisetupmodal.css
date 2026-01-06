@@ -1,0 +1,227 @@
+.modapi-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modapi-modal {
+  width: min(720px, calc(100vw - 32px));
+  background: #0f1624;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  color: #e9eef9;
+  overflow: hidden;
+}
+
+.modapi-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 18px 12px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modapi-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.modapi-modal-close {
+  background: transparent;
+  border: 0;
+  color: #e9eef9;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.modapi-modal-body {
+  padding: 16px 18px 0 18px;
+}
+
+.modapi-modal-text {
+  margin: 0 0 14px 0;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.modapi-path {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.modapi-path-label {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+.modapi-path-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.modapi-path-hint {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.modapi-error {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 80, 80, 0.12);
+  border: 1px solid rgba(255, 80, 80, 0.25);
+  color: #ffd6d6;
+}
+
+.modapi-modal-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 18px;
+  flex-wrap: wrap;
+}
+
+.modapi-modal-footer {
+  padding: 0 18px 18px 18px;
+}
+
+.modapi-btn {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e9eef9;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modapi-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.modapi-btn.primary {
+  background: #2b6fff;
+  border-color: #2b6fff;
+  color: white;
+}
+
+.modapi-btn.danger {
+  background: rgba(255, 80, 80, 0.14);
+  border-color: rgba(255, 80, 80, 0.22);
+  color: #ffd6d6;
+}
+
+.modapi-btn.subtle {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+  opacity: 0.9;
+}
+
+.modapi-progress {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modapi-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.modapi-progress-label {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.modapi-progress-value {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.modapi-progress-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.modapi-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #2b6fff 0%, #49b0ff 65%, #2b6fff 100%);
+  box-shadow: 0 0 18px rgba(43, 111, 255, 0.35);
+  transition: width 140ms ease;
+}
+
+.modapi-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modapi-title-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(43, 111, 255, 0.3));
+}
+
+.modapi-install-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.modapi-install-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(43, 111, 255, 0.26);
+  filter: brightness(1.06);
+}
+
+.modapi-install-btn:active {
+  transform: translateY(0px) scale(0.99);
+  box-shadow: 0 6px 18px rgba(43, 111, 255, 0.18);
+  filter: brightness(0.98);
+}
+
+.modapi-install-btn:focus-visible {
+  outline: 2px solid rgba(73, 176, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.modapi-install-btn:disabled:hover,
+.modapi-install-btn:disabled:active {
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
+
+.modapi-btn-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+}
+
+.modapi-btn-text {
+  display: inline-block;
+  line-height: 1;
+}

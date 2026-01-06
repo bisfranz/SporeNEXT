@@ -1,0 +1,163 @@
+.downloads-panel {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #ccc;
+  font-size: 1.08rem;
+  max-width: 1100px;
+  box-sizing: border-box;
+  background: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.downloads-panel__scroll {
+  width: 100%;
+  max-height: 72.9vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-right: 6px;
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #7e5ab8 #23273a;
+}
+
+@media (min-width: 1900px) and (min-height: 1000px) {
+  .downloads-panel__scroll {
+    max-height: 82vh;
+  }
+}
+
+.downloads-panel__scroll {
+  -ms-overflow-style: auto;
+}
+
+.downloads-panel__scroll::-webkit-scrollbar {
+  width: 10px;
+  background: #23273a;
+  border-radius: 8px;
+}
+
+.downloads-panel__scroll::-webkit-scrollbar-thumb {
+  background: #7e5ab8;
+  border-radius: 8px;
+  border: 2px solid #23273a;
+}
+
+.downloads-panel__scroll::-webkit-scrollbar-thumb:hover {
+  background: #b7a6d7;
+}
+
+.downloads-panel__title {
+  margin-bottom: 1.2rem;
+  color: #7e5ab8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: left;
+  font-size: 1.45rem;
+  text-shadow: none;
+  padding-left: 0.5rem;
+}
+
+.downloads-panel__empty {
+  opacity: 0.85;
+  color: #ccc;
+  font-size: 0.98rem;
+  padding-left: 0.5rem;
+}
+
+.downloads-panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  flex: 0 0 auto;
+  min-height: 0;
+}
+
+.downloads-panel__item {
+  border-radius: 7px;
+  background: transparent;
+  border: 1px solid #23273a;
+  overflow: hidden;
+  padding: 0.75rem 1.1rem;
+  transition: none;
+}
+
+.downloads-panel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.downloads-panel__name {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.downloads-panel__modkey {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.downloads-panel__status {
+  font-size: 0.98rem;
+  color: #ccc;
+  opacity: 0.9;
+  line-height: 1.55;
+}
+
+.downloads-panel__percent {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #7e5ab8;
+  opacity: 1;
+}
+
+.downloads-panel__bar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(17, 23, 34, 0.35);
+  overflow: hidden;
+  margin-top: 0.65rem;
+}
+
+.downloads-panel__barFill {
+  height: 100%;
+  background: rgb(126, 90, 184);
+  width: 0%;
+  transition: width 0.15s linear;
+}
+
+.downloads-panel__cancel {
+  background: none;
+  border: 1px solid #23273a;
+  color: #fff;
+  border-radius: 7px;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  font-family: Segoe UI, Arial, sans-serif;
+}
+
+.downloads-panel__cancel:hover {
+  border-color: #7e5ab8;
+  color: #7e5ab8;
+}
+
+.downloads-panel__cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

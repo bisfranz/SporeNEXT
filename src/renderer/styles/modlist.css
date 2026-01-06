@@ -1,0 +1,341 @@
+.modlist-table {
+  width: 100%;
+  margin-top: 10px;
+  max-height: 72.9vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #7e5ab8 #23273a;
+  position: relative;
+  contain: layout;
+  will-change: scroll-position;
+  transform: translateZ(0);
+  --modlist-header-h: 54px;
+}
+
+@media (min-width: 1900px) and (min-height: 1000px) {
+  .modlist-table {
+    max-height: 82vh;
+  }
+}
+
+.modlist-table::-webkit-scrollbar {
+  width: 10px;
+  background: #23273a;
+  border-radius: 8px;
+}
+
+.modlist-table::-webkit-scrollbar-thumb {
+  background: #7e5ab8;
+  border-radius: 8px;
+  border: 2px solid #23273a;
+}
+
+.modlist-table::-webkit-scrollbar-thumb:hover {
+  background: #b7a6d7;
+}
+
+.modlist-header,
+.modlist-row {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 2.1fr)
+    minmax(120px, 0.95fr)
+    minmax(80px, 0.65fr)
+    minmax(90px, 0.75fr)
+    minmax(120px, 0.95fr)
+    minmax(110px, 0.85fr);
+  column-gap: 0.75rem;
+  row-gap: 0.5rem;
+  align-items: center;
+}
+
+.modlist-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #1d2030;
+
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+  border-radius: 8px 8px 0 0;
+  color: #b7e0ff;
+  letter-spacing: 0.2px;
+}
+
+.modlist-header {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.modlist-header-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.modlist-header-cell,
+.modlist-size,
+.modlist-endorsements,
+.modlist-author,
+.modlist-category {
+  justify-self: start;
+}
+
+.modlist-header-icon {
+  color: #7e5ab8;
+  font-size: 0.95em;
+  opacity: 0.95;
+}
+
+.modlist-row {
+  background: #23273a;
+  border-bottom: 1px solid #111722;
+  padding: 1rem 1rem;
+  height: 70px;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.modlist-row:hover {
+  background: #282c42;
+  transition: background 0.15s, box-shadow 0.15s;
+  filter: brightness(1.08);
+}
+
+.modlist-name {
+  font-weight: bold;
+  font-size: 1.08em;
+}
+
+.modlist-endorsements {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.98em;
+  background: #1c1f2e;
+  color: #eee;
+  font-weight: 600;
+  gap: 5px;
+}
+
+.modlist-endorsements--disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.modlist-endorsements:not(.modlist-endorsements--disabled) {
+  cursor: pointer;
+}
+
+.modlist-endorsements:not(.modlist-endorsements--disabled):hover {
+  background: #23273a;
+  box-shadow: 0 0 0 1px rgba(126, 90, 184, 0.35);
+}
+
+.modlist-endorsements--liked {
+  box-shadow: 0 0 0 1px rgba(183, 166, 215, 0.45);
+}
+
+.modlist-file {
+  font-size: 0.95em;
+  color: #aaa;
+}
+
+.modlist-action-btn {
+  background: rgb(126, 90, 184);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2222;
+  transition: background 0.18s, color 0.18s;
+}
+
+.modlist-action-btn:hover,
+.modlist-action-btn:focus {
+  background: rgb(92, 49, 161);
+  color: #fff;
+}
+
+.modlist-size {
+  background: #1c1f2e;
+  color: #eee;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.98em;
+}
+
+.modlist-author {
+  font-size: 0.98em;
+  color: #b7e0ff;
+  padding-left: 0.15rem;
+}
+
+.modlist-category {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: #fff;
+  background: #1c1f2e;
+  display: inline-block;
+}
+
+.modlist-namecell {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.modlist-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-right: 0.2rem;
+  flex-shrink: 0;
+  background: transparent;
+  aspect-ratio: 1/1;
+}
+
+.modlist-name {
+  font-weight: 600;
+  font-size: 1em;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modlist-file {
+  font-size: 0.8em;
+  color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modlist-loading-overlay {
+  position: relative;
+  inset: auto;
+  top: auto;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: calc(72.9vh - 70px);
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.modlist-loading {
+  display: none;
+}
+
+.modlist-loading-img {
+  width: 90px;
+  height: 90px;
+  display: block;
+  transform-origin: 50% 50%;
+  animation: modlist-spin 1.1s linear infinite;
+}
+
+.modlist-action-btn-uninstall {
+  background: #ff4c4c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2222;
+  transition: background 0.18s, color 0.18s;
+}
+
+.modlist-action-btn-uninstall:hover,
+.modlist-action-btn-uninstall:focus {
+  background: #ff2222;
+  color: #fff;
+}
+
+.modlist-action-btn:disabled {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  text-align: center;
+}
+
+.modlist-action-btn,
+.modlist-action-btn-uninstall {
+  width: 130px;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2222;
+  border: none;
+  transition: background 0.18s, color 0.18s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 38px;
+  line-height: 1.1;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+}
+
+.modlist-action-btn span,
+.modlist-action-btn-uninstall span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.modlist-action-btn {
+  white-space: normal;
+  text-align: center;
+}
+
+.modlist-action-btn-uninstall {
+  white-space: normal;
+  text-align: center;
+}
+
+@keyframes modlist-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modlist-header-cell.modlist-header-cell--clickable {
+  user-select: none;
+  cursor: pointer;
+  transition: background 140ms ease;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  margin: -0.15rem -0.25rem;
+}
+
+.modlist-header-cell.modlist-header-cell--clickable:hover {
+  background: rgba(126, 90, 184, 0.12);
+}
+
+.modlist-header-cell.modlist-header-cell--clickable:focus-visible {
+  outline: 2px solid rgba(183, 224, 255, 0.55);
+  outline-offset: 2px;
+}

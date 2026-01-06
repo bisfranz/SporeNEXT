@@ -1,0 +1,113 @@
+.closewarningmodal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.closewarningmodal-modal {
+  background: #181c24;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 4px 32px #000a;
+  min-width: 340px;
+  max-width: 500px;
+  text-align: center;
+  margin-left: 140px;
+  position: relative;
+}
+
+.closewarningmodal-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2e2e57, transparent);
+  opacity: 0.9;
+}
+
+.closewarningmodal-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.closewarningmodal-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  opacity: 0.95;
+  flex: 0 0 auto;
+}
+
+.closewarningmodal-title {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.closewarningmodal-desc {
+  font-size: 1rem;
+  margin-bottom: 28px;
+  color: #ccc;
+}
+
+.closewarningmodal-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.closewarningmodal-btn {
+  background: #23273a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.closewarningmodal-btn:hover,
+.closewarningmodal-btn:focus {
+  background: #2e2e57;
+}
+
+.closewarningmodal-btn-danger {
+  background: #ff4c4c;
+  color: #fff;
+  font-weight: 600;
+}
+
+.closewarningmodal-btn-danger:hover,
+.closewarningmodal-btn-danger:focus {
+  background: #ff2222;
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .closewarningmodal-modal {
+    margin-left: 0;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .closewarningmodal-top {
+    justify-content: flex-start;
+  }
+}
