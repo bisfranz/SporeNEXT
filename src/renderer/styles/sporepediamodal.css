@@ -34,32 +34,15 @@
 .sporepedia-grid {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
-/* Small widths: reduce columns accordingly */
-@media (max-width: 1150px) {
-  .sporepedia-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 920px) {
-  .sporepedia-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 700px) {
-  .sporepedia-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Large / maximized launcher: allow up to 8 columns */
 @media (min-width: 1700px) {
   .sporepedia-grid {
-    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  .sporepedia-pages {
+    margin-top: 4rem !important;
   }
 }
 
@@ -207,4 +190,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.sporepedia-pages {
+  margin-top: 0.8rem;
 }

@@ -157,7 +157,7 @@
   "auth.errors.openBrowserFailed": "No se pudo abrir el navegador",
   "auth.errors.waitNotAvailable": "Espera de OAuth no disponible",
   "auth.errors.callbackFailed": "Falló el callback de OAuth",
-  "auth.errors.missingTokens": "Failed to login.",
+  "auth.errors.missingTokens": "Fallo al iniciar sesión.",
   "likes.like": "Me gusta",
   "likes.unlike": "Quitar me gusta",
   "likes.loginRequired": "Debes iniciar sesión para dar me gusta",

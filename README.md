@@ -58,7 +58,7 @@ It’s still an early release, so some bugs may appear — updates and fixes wil
 - ✅ **Integrated Discord Login** to unlock more features.
 - ✅ **Integrated Sporepedia** that allows to upload creations.
 - ✅ **English & Spanish** language support.
-- ✅ **Modern, clean, and intuitive interface** designed for ease of use.
+- ✅ **Modern, and intuitive interface** designed for ease of use.
 
 ---
 

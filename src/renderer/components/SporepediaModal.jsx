@@ -11,6 +11,7 @@ import loadingImg from "../../../public/assets/loading.png";
 import SporepediaItemModal from "./SporepediaItemModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import ModListPages from "./ModListPages";
 
 export default function SporepediaModal({ onGoHome }) {
   const { t } = useLocale();
@@ -26,6 +27,9 @@ export default function SporepediaModal({ onGoHome }) {
   const [showUpload, setShowUpload] = useState(false);
   const [refreshTick, setRefreshTick] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const ITEMS_PER_PAGE = 24;
 
   const toggleFilter = (key) => {
     if (!key) return;
@@ -42,6 +46,10 @@ export default function SporepediaModal({ onGoHome }) {
       return next;
     });
   };
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [search, selectedFilters]);
 
   useEffect(() => {
     let cancelled = false;
@@ -99,14 +107,28 @@ export default function SporepediaModal({ onGoHome }) {
     return items;
   }, [items]);
 
+  const totalPages = useMemo(() => {
+    const total = Array.isArray(filteredItems) ? filteredItems.length : 0;
+    return Math.max(1, Math.ceil(total / ITEMS_PER_PAGE));
+  }, [filteredItems]);
+
+  const safeCurrentPage = useMemo(() => {
+    return Math.min(Math.max(currentPage, 1), totalPages);
+  }, [currentPage, totalPages]);
+
+  const pageItems = useMemo(() => {
+    const start = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
+    return (filteredItems || []).slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredItems, safeCurrentPage]);
+
   useEffect(() => {
     loadedKeysRef.current = new Set();
     setImagesLoaded(0);
-  }, [filteredItems]);
+  }, [pageItems]);
 
   const expectedImages = useMemo(() => {
-    return (filteredItems || []).filter((it) => Boolean(it?.image_url)).length;
-  }, [filteredItems]);
+    return (pageItems || []).filter((it) => Boolean(it?.image_url)).length;
+  }, [pageItems]);
 
   const allImagesReady = expectedImages === 0 || imagesLoaded >= expectedImages;
 
@@ -130,7 +152,7 @@ export default function SporepediaModal({ onGoHome }) {
       } catch {}
     }, 80);
     return () => clearTimeout(t);
-  }, [loading, expectedImages, filteredItems.length]);
+  }, [loading, expectedImages, pageItems.length]);
 
   const markImageDone = (key) => {
     if (!key) return;
@@ -169,14 +191,16 @@ export default function SporepediaModal({ onGoHome }) {
           className="sporepedia-grid"
           style={{ opacity: showLoadingOverlay ? 0.35 : 1 }}
         >
-          {filteredItems.map((it, idx) => {
-            const imgKey = it?.image_url ? `${idx}:${it.image_url}` : "";
+          {pageItems.map((it, idx) => {
+            const imgKey = it?.image_url
+              ? `${safeCurrentPage}:${idx}:${it.image_url}`
+              : "";
             const authorUi = String(it?.author || "").replace(/#\d+$/, "");
 
             return (
               <div
                 className="sporepedia-card"
-                key={`${it?.title || "item"}-${idx}`}
+                key={`${it?.title || "item"}-${safeCurrentPage}-${idx}`}
                 role="button"
                 tabIndex={0}
                 onClick={() => setSelectedItem(it)}
@@ -230,9 +254,26 @@ export default function SporepediaModal({ onGoHome }) {
             );
           })}
         </div>
+
+        <div className="sporepedia-pages">
+          <ModListPages
+            currentPage={safeCurrentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </div>
       </>
     );
-  }, [filteredItems, loading, error, allImagesReady, t]);
+  }, [
+    pageItems,
+    safeCurrentPage,
+    totalPages,
+    filteredItems.length,
+    loading,
+    error,
+    allImagesReady,
+    t,
+  ]);
 
   return (
     <div className="sporepedia-panel-root">

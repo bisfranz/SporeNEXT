@@ -1,6 +1,6 @@
 {
   "name": "spore-next-launcher",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Spore NEXT Launcher - Mod Manager",
   "author": "Franz",
   "license": "MIT",
@@ -72,7 +72,7 @@
       "createStartMenuShortcut": true,
       "installerIcon": "public/build/icon.ico",
       "uninstallerIcon": "public/build/icon.ico",
-      "artifactName": "${productName}-Setup-${version}-${arch}.exe"
+      "artifactName": "${productName} Setup-${version}-${arch}.exe"
     },
     "publish": [
       {

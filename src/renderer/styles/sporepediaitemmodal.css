@@ -1,4 +1,3 @@
-/* Styled to match the look/feel of modprofiles modal */
 .sporepediaitem-backdrop {
   position: fixed;
   inset: 0;
@@ -34,7 +33,6 @@
   min-height: 0;
 }
 
-/* Header aligned to ModProfiles */
 .sporepediaitem-header {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -48,7 +46,6 @@
   gap: 1rem;
 }
 
-/* Match ModProfiles image sizing (48x48) */
 .sporepediaitem-header-img {
   width: 150px;
   height: 150px;
@@ -66,12 +63,10 @@
   margin-right: 0.5rem;
 }
 
-/* Make header text block behave like ModProfiles (no extra gaps) */
 .sporepediaitem-header-texts {
   display: block;
 }
 
-/* Actions placement similar to ModProfiles */
 .sporepediaitem-actions {
   margin-top: 0.7rem;
   display: flex;
@@ -131,7 +126,6 @@
   background: #b7a6d7;
 }
 
-/* Match ModProfiles: no card-like sections, same spacing */
 .sporepediaitem-section {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -150,7 +144,6 @@
   letter-spacing: 0.2px;
 }
 
-/* Match ModProfiles description styling */
 .sporepediaitem-description {
   color: #eee;
   font-size: 1.01rem;
@@ -159,7 +152,6 @@
   white-space: pre-wrap;
 }
 
-/* Match ModProfiles details styling */
 .sporepediaitem-details {
   list-style: none;
   padding: 0;
@@ -207,12 +199,10 @@
   transition: transform 140ms ease;
 }
 
-/* Hover animation only (no click/active animation) */
 .sporepediaitem-details-iconWrap:hover .sporepediaitem-details-icon {
   transform: scale(1.06);
 }
 
-/* Delete creation button (icon-only) */
 .sporepediaitem-deleteBtn {
   width: 40px;
   height: 40px;
@@ -245,7 +235,6 @@
   box-shadow: none;
 }
 
-/* Match ModProfiles max width on big screens */
 @media (min-width: 1920px) {
   .sporepediaitem-section {
     max-width: 1500px;

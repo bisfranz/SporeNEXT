@@ -1,10 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
+const fs = require("fs");
+const path = require("path");
+const os = require("os");
 
 function getSporeRoamingPath() {
-  const appData = process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming');
-  return path.join(appData, 'Spore');
+  const appData =
+    process.env.APPDATA || path.join(os.homedir(), "AppData", "Roaming");
+  return path.join(appData, "Spore");
 }
 
 function findNextBackupPath(parentDir, baseName) {
@@ -14,27 +15,27 @@ function findNextBackupPath(parentDir, baseName) {
     const candidate = path.join(parentDir, `${baseName}${i}`);
     if (!fs.existsSync(candidate)) return candidate;
   }
-  throw new Error('Too many backups exist (Games.backup1...Games.backup9999).');
+  throw new Error("Too many backups exist (Games.backup1...Games.backup9999).");
 }
 
 async function galaxyReset() {
   const sporeDir = getSporeRoamingPath();
-  const gamesDir = path.join(sporeDir, 'Games');
+  const gamesDir = path.join(sporeDir, "Games");
   if (!fs.existsSync(sporeDir)) {
     return {
       ok: false,
-      code: 'SPORE_FOLDER_NOT_FOUND',
+      code: "SPORE_FOLDER_NOT_FOUND",
       path: sporeDir,
     };
   }
   if (!fs.existsSync(gamesDir)) {
     return {
       ok: false,
-      code: 'GAMES_FOLDER_NOT_FOUND',
+      code: "GAMES_FOLDER_NOT_FOUND",
       path: gamesDir,
     };
   }
-  const backupPath = findNextBackupPath(sporeDir, 'Games.backup');
+  const backupPath = findNextBackupPath(sporeDir, "Games.backup");
   fs.renameSync(gamesDir, backupPath);
   return {
     ok: true,

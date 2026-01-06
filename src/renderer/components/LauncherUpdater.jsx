@@ -48,15 +48,13 @@ export default function LauncherUpdater() {
 
   const label = useMemo(() => {
     const s = state?.status;
-    const targetVersion = state?.version;
 
     if (s === "available") {
-      const base =
+      return (
         t("update-available") ||
         t("launcherupdate-available") ||
-        "Update available";
-
-      return targetVersion ? `${base} v${String(targetVersion)}` : base;
+        "Update available"
+      );
     }
 
     if (s === "downloading")
