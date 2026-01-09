@@ -33,9 +33,6 @@
     
 </p>
 
-<p align="center">
-  <img src="public/assets/spore-next-logo.png" alt="Spore NEXT Logo" width="700px">
-</p>
 
 # Spore NEXT Launcher
 
